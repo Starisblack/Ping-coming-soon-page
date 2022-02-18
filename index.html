@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/f2d1f6a944.js" crossorigin="anonymous"></script>
+
+  <title>Frontend Mentor | Ping coming soon page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 13px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+
+    <div class="main-container">
+      <img class="logo" src="images/logo.svg" alt="">
+      <h1 class="head-title">We are launching <span class="soon-text">soon!</span> </h1>
+      <p>Subscribe and get notified</p>
+
+      <div class="emailValid">
+        <input class="email-address" type="email" name="" placeholder="Your email address">
+        <p class="error-msg"> <em>please provide a valid email address</em></p>
+        <button class="btn" type="button" name="button" onclick="ValidateEmail()">Notify Me</button>
+      </div>
+
+
+
+      <img class="illustration-img" src="images/illustration-dashboard.png" alt="">
+
+      <div class="icons">
+        <i class="fa-brands fab fa-facebook-f"></i>
+        <i class="fa-brands fab fa-twitter"></i>
+        <i class="fa-brands fab fa-instagram"></i>
+      </div>
+
+      <p class="copyright">@Copyright Ping. All rights reserved.</p>
+    </div>
+
+
+    <footer>
+      <p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Ogunniyi Samuel</a>.
+      </p>
+    </footer>
+
+  </main>
+
+  <script>
+    function ValidateEmail() {
+      var emailInput = document.querySelector(".email-address");
+      var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+      if (emailInput.value.match(mailformat)) {
+        alert("subscribed successfully");
+        document.querySelector(".error-msg").style.display = "none";
+        window.location.reload();
+      } else {
+        document.querySelector(".error-msg").style.display = "block";
+        emailInput.classList.add("error-border");
+      }
+    }
+  </script>
+
+
+
+</body>
+
+</html>
